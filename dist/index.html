@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171321"><meta name="description" content="Belajar CTF Web Exploitation bersama Citlali. Roadmap interaktif, sprint 3 minggu, catatan, dan progress belajar.">
+  <title>Citlali's Grimoire — Web Exploitation Roadmap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Lora:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css"><script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#learning">Langsung ke roadmap</a>
+  <header class="topbar"><a class="brand" href="#"><span class="brand-symbol">✧</span><span>citlali<span class="brand-light">'s grimoire</span><small>WEB EXPLOITATION FIELD NOTES</small></span></a><nav aria-label="Navigasi utama"><a class="top-link" href="#learning">Roadmap</a><button class="top-link" id="resources">Sumber belajar <span>↗</span></button><span class="edition">VOL. 01 <i></i> CTF EDITION</span></nav></header>
+  <main class="layout">
+    <aside class="sidebar">
+      <div class="side-heading">YOUR ADVENTURE</div>
+      <a class="side-home" href="#learning"><span>⌘</span> Web Exploitation <span class="tiny-star">✦</span></a>
+      <div class="side-links" id="stage-nav"></div>
+      <div class="progress-card"><div class="eyebrow">CONSTELLATION PROGRESS</div><div class="progress-number"><strong id="percent">0<span>%</span></strong><span class="ice-star">❄</span></div><div class="progress-track"><div id="progress-fill"></div></div><p id="progress-label">0 / 42 topik dikuasai</p><div class="local-tag"><i></i> Tersimpan di browser ini</div></div>
+      <div class="grandma-note"><span>✧ CATATAN NENEK ITZTLI</span><p>“Jangan buru-buru cari payload. Pahami dulu kenapa celahnya ada.”</p><small>Pelan-pelan juga sampai ke flag.</small></div>
+      <button class="side-action" id="export">↓ Ekspor progres</button><button class="side-action muted" id="reset">↺ Mulai ulang progres</button>
+      <div class="side-bottom">Made for curious minds.<br><span>And a little Cryo magic. ❄</span></div>
+    </aside>
+    <div class="content">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-art"><img src="assets/citlali-hero.png" alt="Ilustrasi fan art Citlali dengan rambut pink dan bintang Cryo bercahaya" fetchpriority="high"></div>
+        <div class="hero-copy"><div class="hero-kicker"><span>✦</span> A LITTLE MAGIC. A LOT OF CURIOSITY.</div><h1 id="hero-title">Web Exploitation<br><em>Roadmap</em><span class="title-star">✧</span></h1><p>Dari HTTP pertama sampai flag terakhir.<br>Peta belajarmu menembus dunia CTF web,<br>ditemani sedikit sihir Citlali.</p><a href="#learning" class="primary" id="continue">Mulai petualangan <span>↗</span></a><div class="hero-foot"><span>⌁ BEGINNER → ADVANCED</span><span>✧ LEARN AT YOUR OWN PACE</span></div></div>
+        <span class="art-caption">CITLALI · NIGHTWIND'S MYSTIC</span>
+      </section>
+      <section class="intro-row"><div><span class="little-label">THE LEARNING PATH</span><h2>Satu topik. Satu langkah lebih dekat.</h2></div><p>Klik topik untuk membuka catatan & latihan.<br>Tandai progresmu, lanjutkan kapan saja.</p></section>
+      <div class="mobile-summary"><span>✧ <strong id="mobile-progress">0 / 42 topik dikuasai</strong></span><button id="mobile-export">Ekspor progres ↓</button></div>
+      <section id="learning" class="learning" aria-label="Roadmap belajar">
+        <div class="toolbar"><div class="tabs" role="tablist" aria-label="Jalur belajar"><button id="tab-full" role="tab" aria-selected="true" aria-controls="roadmap" data-track="full">✧ Roadmap lengkap</button><button id="tab-sprint" role="tab" aria-selected="false" aria-controls="roadmap" data-track="sprint">ϟ Sprint 3 minggu</button></div><button class="print" id="print" aria-label="Cetak roadmap" title="Cetak roadmap">⎙</button></div>
+        <div class="filterbar"><label class="search"><span>⌕</span><input type="search" id="search" placeholder="Cari topik, misalnya SQL injection…" aria-label="Cari topik"><kbd>/</kbd></label><select id="status-filter" aria-label="Filter status"><option value="all">Semua status</option><option value="todo">Belum mulai</option><option value="doing">Sedang belajar</option><option value="done">Sudah paham</option></select></div>
+        <div class="map-meta"><span id="track-description">6 chapter · 42 topik · dari fondasi sampai kompetisi</span><div class="legend"><span><i></i> Belum mulai</span><span><i class="doing"></i> Dipelajari</span><span><i class="done"></i> Dikuasai</span></div></div>
+        <div id="roadmap" role="tabpanel" aria-labelledby="tab-full" tabindex="0"></div>
+        <div class="journey-end" id="journey-end"><span>✦</span><div>THE NEXT FLAG IS YOURS.<small>Belajar. Eksperimen. Tulis. Ulangi.</small></div><span>✦</span></div>
+      </section>
+      <footer><span>✧ citlali's grimoire</span><p>Fan project · Terinspirasi Citlali dari Genshin Impact.<br>Latihan di lab CTF atau sistem yang kamu punya izin untuk uji.</p><a href="#">Kembali ke atas ↑</a></footer>
+    </div>
+  </main>
+  <dialog id="topic-dialog" aria-labelledby="dialog-title"><div class="dialog-top"><span id="dialog-chapter" class="eyebrow"></span><button class="close" data-close aria-label="Tutup detail">×</button></div><div class="dialog-body" id="dialog-content"></div></dialog>
+  <dialog id="resource-dialog" aria-labelledby="resource-title"><div class="dialog-top"><span class="eyebrow">YOUR FIELD LIBRARY</span><button class="close" data-close aria-label="Tutup sumber belajar">×</button></div><div class="dialog-body"><h2 id="resource-title">Bekal untuk perjalananmu.</h2><p class="dialog-lead">Baca konsepnya, praktikkan di lab, lalu tulis apa yang kamu temukan.</p><div class="resource-list"><a href="https://portswigger.net/web-security/learning-paths" target="_blank" rel="noopener noreferrer"><span>01</span><div><strong>PortSwigger Academy ↗</strong><p>Materi web security dan lab interaktif per topik.</p></div></a><a href="https://overthewire.org/wargames/natas/" target="_blank" rel="noopener noreferrer"><span>02</span><div><strong>OverTheWire: Natas ↗</strong><p>Wargame web untuk melatih observasi dan eksperimen.</p></div></a><a href="https://developer.mozilla.org/en-US/docs/Web/HTTP" target="_blank" rel="noopener noreferrer"><span>03</span><div><strong>MDN Web Docs ↗</strong><p>Referensi HTTP, browser, cookie, dan JavaScript.</p></div></a></div><div class="tip">✧ Mulai dari fondasi. Kalau mentok, catat hipotesismu sebelum membuka hint.</div></div></dialog>
+  <dialog id="reset-dialog" aria-labelledby="reset-title"><div class="dialog-body"><h2 id="reset-title">Mulai perjalanan baru?</h2><p>Semua status dan catatan di browser ini akan dihapus. Ekspor progres dulu jika ingin menyimpannya.</p><div class="dialog-actions"><button class="secondary" data-close>Batal</button><button class="primary" id="confirm-reset">Hapus progres</button></div></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
